@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
   constructor(private auth : AuthService, private displayPost : DisplayPostService) { }
   
   form = new FormGroup({
-    userid: new FormControl(Number(localStorage.getItem('id'))),
-    posttext: new FormControl('', [Validators.required]),
+    userId: new FormControl(Number(localStorage.getItem('id'))),
+    postText: new FormControl('', [Validators.required]),
   });
   
   data : any

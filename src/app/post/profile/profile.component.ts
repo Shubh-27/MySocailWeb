@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   data:any
   form = new FormGroup({
     postid : new FormControl(0,[Validators.required]),
-    posttext: new FormControl('',[Validators.required])
+    postText: new FormControl('',[Validators.required])
   });
 
   ngOnInit(): void {
@@ -30,11 +30,11 @@ export class ProfileComponent implements OnInit {
   }
 
   edit(postid: number){
-    var id = "editPosttext-" + postid;
-    var posttext = (<HTMLInputElement>document.getElementById(id)).value;
+    var id = "editpostText-" + postid;
+    var postText = (<HTMLInputElement>document.getElementById(id)).value;
     var data = {
       postid:postid,
-      posttext:posttext
+      postText:postText
     }
     this.displayPost.editPost(data).subscribe(dt=>{
       if(dt)
