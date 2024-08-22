@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+    color:#039be5;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hyperlink{
+    color:#039be5;
+    cursor: pointer;
+    text-decoration: none;
+}
+.formMain {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

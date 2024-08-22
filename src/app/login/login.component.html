@@ -1,0 +1,31 @@
+<div class="formMain">
+  <div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="invalidLogin">
+      Wrong Username/Password
+      <button type="button" class="btn-close" data-dismiss="alert" (click)="Dissmiss()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="Login(form)">
+      <div>
+        <img class="img-responsive center-block d-block mx-auto mb-3" src="https://i.imgur.com/zqpwkLQ.png" />
+      </div>
+      <div class="form-group">
+        <input class="form-control mb-3" placeholder="Username" name="username" formControlName="username" />
+      </div>
+      <div class="form-group">
+        <input class="form-control mb-3" type="password" placeholder="Password" name="password"
+          formControlName="password" />
+      </div>
+      <div class="col text-center">
+        <input type="submit" [disabled]="!form.valid" value="Log in" class="btn btn-outline-primary mb-3" />
+      </div>
+    </form>
+
+    <div>
+      <div class="text-center mb-3">
+        Don't have an account?<a (click)="Register()" class="hyperlink">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>

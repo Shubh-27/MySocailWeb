@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="post(form)">
+  <div class="frame__container">
+    <div class="text">
+      <textarea placeholder="What's in your mind" class="form-control" id="postdata" formControlName="postText"></textarea>
+      <input type="submit" [disabled]="!form.valid" id="postButton" class="form-control" value="POST"  />
+    </div>
+  </div>
+</form>
+
+<ng-container *ngFor="let item of data">
+<br />
+<div class="frame__container">
+  <div class="frame__headline">
+    <div class="frame__column">
+      <p class="headline__title" style="text-transform:capitalize">
+        {{item.name}}
+      </p>
+      <p class="headline__subtitle">
+        Posted by <b>{{item.username}}</b> on <b>{{item.createdDateTime | date}}</b>
+    </div>
+  </div>
+  <div class="frame__content">
+    <p class="frame__text--small">{{item.postText}}</p>
+  </div>
+
+  <div class="frame__footer">
+    <div class="footer__likes">
+      <p class="text__social">Like</p>
+    </div>
+    <div class="footer__comments">
+      <p class="text__social">Comment</p>
+    </div>
+    <div class="footer__share">
+      <p class="text__social">Share</p>
+    </div>
+  </div>
+</div>
+<br />
+</ng-container>

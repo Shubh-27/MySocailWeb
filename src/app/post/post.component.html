@@ -1,0 +1,23 @@
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" routerLink="home"><img style="position:center" src="https://i.imgur.com/zqpwkLQ.png" /></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="addfriend">Friends</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="friendlist">Friend List</a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav navbar-right" style="margin-right:2%">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="profile">Profile</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-danger" type="button" (click)="Logout()">Logout</button>
+    </div>
+  </nav>
+
+  <router-outlet ></router-outlet>

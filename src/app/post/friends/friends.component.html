@@ -1,0 +1,46 @@
+ <div class="row">
+
+   <div class="col-lg-4">
+     <h3 style="text-align:center">Add Friends</h3>
+     <ng-container *ngFor="let item of data?.users">
+       <form>
+         <br />
+         <div class="card align-content-center frame__container" style="padding: 3%;flex-direction:row">
+           <p style="width: 80%;"><b>{{item.username}}</b></p>
+           <button type="button" class="btn btn-outline-primary" (click)="send(item.userId)">Send</button>
+           &nbsp;
+         </div>
+       </form>
+     </ng-container>
+   </div>
+
+   <div class="col-lg-4">
+     <h3 style="text-align:center">Requests</h3>
+     <ng-container *ngFor="let item of data?.reqUsers">
+       <form>
+         <br />
+         <div class="card align-content-center frame__container" style="padding: 3%;flex-direction:row">
+           <p style="width: 80%;"><b>{{item.username}}</b></p>
+           <button type="button" class="btn btn-outline-success" (click)="accept(item.userId)">Accept</button>
+           &nbsp;
+           <button type="button" class="btn btn-outline-danger" (click)="reject(item.userId)">Reject</button>
+           &nbsp;
+         </div>
+       </form>
+     </ng-container>
+   </div>
+
+   <div class="col-lg-4">
+     <h3 style="text-align:center"> Sent Requests</h3>
+     <ng-container *ngFor="let item of data?.sendUsers">
+       <form>
+         <br />
+         <div class="card align-content-center frame__container" style="padding: 3%;flex-direction:row">
+           <p style="width: 80%;"><b>{{item.username}}</b></p>
+           <button type="button" id="{{ 'Button-' + item.userId }}" (mouseenter)="enter(item.userId)" (mouseleave)="leave(item.userId)" class="button btn btn-light" (click)="reject(item.userId)">Pending</button>
+           &nbsp;
+         </div>
+       </form>
+     </ng-container>
+   </div>
+ </div>

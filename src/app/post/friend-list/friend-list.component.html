@@ -1,0 +1,15 @@
+<div class="search">
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search" id="search" (keyup)="search()" />
+  </div>
+</div>
+<ng-container *ngFor="let item of data">
+  <form>
+    <br />
+    <div class="card align-content-center frame__container" style="padding: 1%;flex-direction:row">
+      <p style="width: 80%;"><b>{{item.username}}</b></p>
+      <button type="button" class="btn btn-outline-danger" (click)="remove(item.userid)">Remove</button>
+      &nbsp;
+    </div>  
+  </form>
+</ng-container>

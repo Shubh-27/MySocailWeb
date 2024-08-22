@@ -1,0 +1,69 @@
+<br />
+<ng-container *ngFor="let item of data">
+    <br />
+    <div class="frame__container">
+        <div class="frame__headline">
+            <div class="frame__column">
+                <p class="headline__title" style="text-transform:capitalize">
+                    {{item.name}}
+                </p>
+                <p class="headline__subtitle">
+                    Posted by <b>{{item.username}}</b> on <b>{{item.createddate | date}}</b>
+            </div>
+            <div class="menu">
+                <button class="btn btn-outline-success buttons" data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#EditModel-'+item.postid">Edit</button>
+                &nbsp;
+                &nbsp;
+                <button class="btn btn-outline-danger buttons" data-bs-toggle="modal"
+                    data-bs-target="#DeleteModel">Delete</button>
+            </div>
+        </div>
+        <div class="frame__content">
+            <p class="frame__text--small">{{item.posttext}}</p>
+        </div>
+
+
+
+        <div class="modal fade" id="{{ 'EditModel-' + item.postid }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Edit</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" type="text" id="{{'editPosttext-'+ item.postid}}"
+                            value="{{item.posttext}}"> </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-outline-success" id="{{'save-'+item.postid}}"
+                            (click)="edit(item.postid)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="DeleteModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Delete</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to delete this?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-danger"
+                            (click)="delete(item.postid)">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</ng-container>

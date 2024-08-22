@@ -1,0 +1,8 @@
+@import url(../post.component.css);
+
+.search{
+    display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 502px;
+}

@@ -1,0 +1,30 @@
+<div style="position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+  <div>
+    <div class="header">
+      <img class="img-responsive center-block d-block mx-auto mb-3" src="https://i.imgur.com/zqpwkLQ.png" />
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="Register()">
+      <div>
+        <input class="form-control mb-3" placeholder="Name" name="name" formControlName="name" />
+      </div>
+      <div>
+        <input class="form-control mb-3" placeholder="Username" name="username" formControlName="username"/>
+      </div>
+      <div>
+        <input class="form-control mb-3" type="password" placeholder="Password" name="password" formControlName="password"/>
+      </div>
+      <!-- <div>
+                <input class="form-control mb-3" type="password" placeholder="Confirm Password" name="password" />
+            </div> -->
+      <div class="text-center mb-3">
+        <input type="submit" [disabled]="!form.valid"  value="Sign up" class="btn btn-outline-primary" />
+      </div>
+    </form>
+    <div>
+      <div class="text-center mb-3">
+        <p>Have an account? <a (click)="Login()" class="hyperlink">Log in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
