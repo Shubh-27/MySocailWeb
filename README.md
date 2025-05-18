@@ -1,14 +1,52 @@
-# my-social-app
+# My Social App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+A modern social media application built with Angular that allows users to connect, share posts, and interact with others.
 
-## Development server
+## Features
+
+- User Authentication
+  - Login functionality
+  - User registration
+- Post Management
+  - Create and view posts
+  - Interactive post feed
+- Modern UI/UX design
+- Responsive layout
+
+## Prerequisites
+
+- Node.js (v14 or higher)
+- Angular CLI (v14.2.2)
+- npm (Node Package Manager)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [your-repository-url]
+cd my-social-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+## Development
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Project Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+src/app/
+├── login/          # Login component and related files
+├── register/       # Registration component and related files
+├── post/          # Post management components
+├── model/         # Data models and interfaces
+├── services/      # Angular services
+└── route/         # Route guards and resolvers
+```
 
 ## Build
 
@@ -21,6 +59,18 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Further help
 
